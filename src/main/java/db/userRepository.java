@@ -20,18 +20,20 @@ import static db.Queries.*;
  *
  * @author Yarman
  */
-public class userRepository implements CRUD{
-    Connection connection;
+public class userRepository {
+    OracleDBConnection connection;
     
 
-    public userRepository(Connection connection) {
+    public userRepository(OracleDBConnection connection) {
         this.connection = connection;
     }
 
     public userEntity login(String user, String password){
+        this.connection.openConnection();
+        Connection connect = connection.getConnection();
          ResultSet resultSet = null;
         try{
-            PreparedStatement statement= this.connection.prepareStatement(LOGIN_CLIENT_QUERY);
+            PreparedStatement statement= connect.prepareStatement(LOGIN_CLIENT_QUERY);
             statement.setString(1, user);            
             statement.setString(2, password);
             resultSet = statement.executeQuery();
@@ -55,27 +57,27 @@ public class userRepository implements CRUD{
         }
         return null;
     }
-    @Override
+    
     public List findAll() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
+   
     public Optional findById(int userID) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
+    
     public int save(Object entity) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
+    
     public void delete(Serializable entityID) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
+    
     public Object update(Object entity) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }

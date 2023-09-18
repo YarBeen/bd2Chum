@@ -4,8 +4,8 @@
  */
 package com.bd2.proyecto1;
 
-
 import db.OracleDBConnection;
+import db.dbSingleton;
 import db.userRepository;
 import entity.userEntity;
 import java.io.IOException;
@@ -19,7 +19,6 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author Yarman
  */
-
 public class loginServlet extends HttpServlet {
 
     /**
@@ -33,17 +32,26 @@ public class loginServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         response.setContentType("text/html;charset=UTF-8");
-        OracleDBConnection db= new OracleDBConnection();
+        OracleDBConnection db = dbSingleton.getDBConnection();
         String user = request.getParameter("user");
         String password = request.getParameter("pass");
-        
-        userRepository userDB = new userRepository(db.getConnection());
+
+        userRepository userDB = db.getUserRep();
         userEntity userEnt = userDB.login(user, password);
-        if(userEnt==null){
-             response.sendRedirect("indexFail.jsp");
+
+        if (userEnt == null) {
+            response.sendRedirect("indexFail.jsp");
+            return;
         }
-        response.sendRedirect("comprarOVender.jsp");
+        request.getSession().setAttribute("userEntity", userEnt);
+        request.getSession().setAttribute("user", userEnt.getNombre());
+        db.closeConection();
+
+        
+        request.getRequestDispatcher("comprarOVender.jsp").forward(request, response);
+      //  response.sendRedirect("comprarOVender.jsp");
 //        try (PrintWriter out = response.getWriter()) {
 //            /* TODO output your page here. You may use following sample code. */
 //            out.println("<!DOCTYPE html>");
@@ -52,7 +60,6 @@ public class loginServlet extends HttpServlet {
 //            out.println("<title>Servlet loginServlet</title>");            
 //            out.println("</head>");
 //            out.println("<body>");
-//            out.println("Yowi gay");
 //            
 //            out.println("<h1>Servlet loginServlet at " + request.getContextPath() + "</h1>");
 //            out.println("</body>");

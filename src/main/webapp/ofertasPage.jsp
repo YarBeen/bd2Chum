@@ -9,9 +9,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Ofertas</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+         <div class="botones">
+            <input type="button" value="Ver mis ofertas" onclick="showOfertasForm()"/>
+            <input type="button" value="Crear Oferta" onclick="showOfertasCreateForm()"/>
+            <input type="button" value="Editar Oferta" onclick="showOfertasEditForm()"/>
+            <input type="button" value="Borrar Oferta" onclick="showOfertasDeleteForm()"/>
+         </div>
     </body>
 </html>

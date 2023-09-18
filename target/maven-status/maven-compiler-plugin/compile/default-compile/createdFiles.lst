@@ -1,8 +1,11 @@
-db\CRUD.class
 com\bd2\proyecto1\resources\JakartaEE10Resource.class
+db\dbSingleton.class
 com\bd2\proyecto1\loginServlet.class
+entity\publicacionEntity.class
 db\OracleDBConnection.class
 db\userRepository.class
 db\Queries.class
+com\bd2\proyecto1\createPublicacionServlet.class
+db\publicacionRepository.class
 com\bd2\proyecto1\JakartaRestConfiguration.class
 entity\userEntity.class
