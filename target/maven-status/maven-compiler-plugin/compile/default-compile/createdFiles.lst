@@ -1,0 +1,8 @@
+db\CRUD.class
+com\bd2\proyecto1\resources\JakartaEE10Resource.class
+com\bd2\proyecto1\loginServlet.class
+db\OracleDBConnection.class
+db\userRepository.class
+db\Queries.class
+com\bd2\proyecto1\JakartaRestConfiguration.class
+entity\userEntity.class
