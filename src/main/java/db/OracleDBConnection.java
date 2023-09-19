@@ -18,6 +18,7 @@ public class OracleDBConnection {
     private Connection connection;
     private userRepository userRep;
     private publicacionRepository pubRep;
+    private ofertaRepository ofeRep;
     private boolean open;
 
     public Connection getConnection() {
@@ -37,6 +38,10 @@ public class OracleDBConnection {
 
     public publicacionRepository getPubRep() {
         return pubRep;
+    }
+
+    public ofertaRepository getOfeRep() {
+    return ofeRep;
     }
 
     public void closeConection() {
@@ -78,6 +83,7 @@ public class OracleDBConnection {
     private void init() {
         this.userRep = new userRepository(this);
         this.pubRep = new publicacionRepository(this);
+        this.ofeRep = new ofertaRepository(this);
     }
 
     public OracleDBConnection() {

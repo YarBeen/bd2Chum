@@ -23,6 +23,6 @@ public class Queries {
     
     public static final String INSERT_OFERTA_QUERY = "exec modificaciones.InsertarOferta(?, ? , ? , ?, ? );";
     public static final String DELETE_OFERTA_QUERY = "exec modificaciones.EliminarOfertaPorID(? );";
-    public static final String ACTUALIZAR_OFERTA_QUERY = "exec modificaciones.ActualizarOfertaPorID(?, ? , ? , ?);";
+    public static final String UPDATE_OFERTA_QUERY = "exec modificaciones.ActualizarOfertaPorID(?, ? , ? , ?);";
 
 }
