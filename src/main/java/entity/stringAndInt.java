@@ -1,10 +1,10 @@
 package entity;
 
 public class stringAndInt {
-    
+
     private String nombre;
     private int valor;
-    
+
     public stringAndInt(String nombre, int valor) {
         this.nombre = nombre;
         this.valor = valor;

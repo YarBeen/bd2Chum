@@ -9,6 +9,7 @@ package entity;
  * @author Yarman
  */
 public class publicacionEntity {
+
     private int id;
     private int idProducto;
     private String titulo;
@@ -29,7 +30,7 @@ public class publicacionEntity {
         this.estado = estado;
         this.precio = precio;
     }
-    
+
     public int getId() {
         return id;
     }
@@ -69,5 +70,5 @@ public class publicacionEntity {
     public void setPrecio(int precio) {
         this.precio = precio;
     }
-    
+
 }

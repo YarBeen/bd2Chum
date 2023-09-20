@@ -33,21 +33,32 @@ public class editPublicacionServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-           OracleDBConnection db = dbSingleton.getDBConnection();
+        OracleDBConnection db = dbSingleton.getDBConnection();
         publicacionRepository pubDB = db.getPubRep();
+        int isPossible = pubDB.isMine(db.getUserLogged().getId(), Integer.parseInt(request.getParameter("publication-edit-form-id")));
+        if (isPossible == -1) {
+            request.getRequestDispatcher("noEsTuyo.jsp").forward(request, response);
+
+            return;
+        }
+        db = dbSingleton.getDBConnection();
+        pubDB = db.getPubRep();
         publicacionEntity pub;
-        pub = new publicacionEntity(Integer.parseInt( request.getParameter("publication-edit-form-id")),
-                Integer.parseInt( request.getParameter("publication-edit-form-id-producto")),
+        pub = new publicacionEntity(Integer.parseInt(request.getParameter("publication-edit-form-id")),
+                Integer.parseInt(request.getParameter("publication-edit-form-id-producto")),
                 request.getParameter("publication-edit-form-titulo"),
                 request.getParameter("publication-edit-form-estado"),
-                
-               Integer.parseInt( request.getParameter("publication-edit-form-precio"))
+                Integer.parseInt(request.getParameter("publication-edit-form-precio"))
         );
-        pubDB.update(pub);
+        int done = pubDB.update(pub);
         db.closeConection();
-        
-        
-         request.getRequestDispatcher("comprarOVender.jsp").forward(request, response);
+
+        if (done == -1) {
+            request.getRequestDispatcher("falloPagina.jsp").forward(request, response);
+            return;
+        }
+
+        request.getRequestDispatcher("exitoPagina.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

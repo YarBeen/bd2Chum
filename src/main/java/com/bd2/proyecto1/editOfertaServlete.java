@@ -35,19 +35,31 @@ public class editOfertaServlete extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-           OracleDBConnection db = dbSingleton.getDBConnection();
+        OracleDBConnection db = dbSingleton.getDBConnection();
         ofertaRepository ofeDB = db.getOfeRep();
+        int isPossible = ofeDB.isMine(db.getUserLogged().getId(), Integer.parseInt(request.getParameter("oferta-edit-form-id-oferta")));
+        if (isPossible == -1) {
+            request.getRequestDispatcher("noEsTuyo.jsp").forward(request, response);
+
+            return;
+        }
+        db = dbSingleton.getDBConnection();
+        ofeDB = db.getOfeRep();
 
         ofertaEntity ofe;
         ofe = new ofertaEntity(Integer.parseInt(request.getParameter("oferta-edit-form-id-oferta")),
                 Integer.parseInt(request.getParameter("oferta-edit-form-precio")),
                 request.getParameter("oferta-edit-form-mensaje")
-             
         );
-        ofeDB.update(ofe);
+        int done = ofeDB.update(ofe);
         db.closeConection();
 
-        request.getRequestDispatcher("comprarOVender.jsp").forward(request, response);
+        if (done == -1) {
+            request.getRequestDispatcher("falloPagina.jsp").forward(request, response);
+            return;
+        }
+
+        request.getRequestDispatcher("exitoPagina.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

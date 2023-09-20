@@ -40,12 +40,16 @@ public class createProductoServlet extends HttpServlet {
         prod = new productoEntity(  request.getParameter("productForm-create-nombre"),
                 request.getParameter("productForm-create-descripcion"),
                 db.getUserLogged().getId(),
-                Integer.parseInt(request.getParameter("productForm-create-categoria"))
-        );
-        prodRep.save(prod);
+                Integer.parseInt(request.getParameter("productForm-create-categoria")));
+        int done=prodRep.save(prod);
         db.closeConection();
 
-        request.getRequestDispatcher("comprarOVender.jsp").forward(request, response);
+        if(done==-1){
+            request.getRequestDispatcher("falloPagina.jsp").forward(request, response);
+            return;
+        }
+        
+         request.getRequestDispatcher("exitoPagina.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

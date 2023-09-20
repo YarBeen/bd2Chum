@@ -11,20 +11,20 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Vender</title>
         <link rel="stylesheet" type="text/css" href="styles/sellPageStyle.css">
-         <script>
-        var userFromSession = '<%= session.getAttribute("user") %>';
-        console.log(typeof userFromSession);
-        if (userFromSession === "null" || userFromSession === "") {
-            // User is not logged in, redirect to indexFail.jsp
-            window.location.href = "indexNotLogged.jsp";
-        }
-    </script>
+        <script>
+             var userFromSession = '<%= session.getAttribute("user")%>';
+             console.log(typeof userFromSession);
+             if (userFromSession === "null" || userFromSession === "") {
 
-    
-    <script src="script/checkLoggedStatus.js"></script>
+                 window.location.href = "indexNotLogged.jsp";
+             }
+        </script>
+
+
+        <script src="script/checkLoggedStatus.js"></script>
     </head>
     <body>
-        <p class="hola-usuario"><strong>Usuario:</strong> <%= session.getAttribute("user") %></p><br>
+        <p class="hola-usuario"><strong>Usuario:</strong> <%= session.getAttribute("user")%></p><br>
         <div class="botones">
             <input type="button" value="Publicacion" onclick="showButtonsPublicacion()"/>
             <input type="button" value="Producto" onclick="showButtonsProducto()" />
@@ -33,7 +33,7 @@
                     <input type="button" value="Crear" onclick="showPublicationCreateForm()" />
                     <input type="button" value="Editar" onclick="showPublicationEditForm()" />
                     <input type="button" value="Borrar" onclick="showPublicationDeleteForm()" />
-                     <form action="misPublicaciones">
+                    <form action="misPublicaciones">
                         <input type="submit" value="Mis Publicaciones"/>
                     </form>
                 </div>
@@ -48,7 +48,7 @@
         </div>
 
         <div class="form-container">
-            
+
             <div id="publication-edit-form" class="publicacion-form">
                 <form action="editPublicacion" method="post">
                     ID<input type="number" name="publication-edit-form-id" required/><br>
@@ -86,7 +86,7 @@
 
                     Nombre<input type="string" name="productForm-edit-nombre" required/><br>
                     Descripcion<input type="string" name="productForm-edit-descripcion" required/><br>
-                    
+
 
 
                     <input type="submit" value="Enviar"/>

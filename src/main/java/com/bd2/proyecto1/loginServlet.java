@@ -50,9 +50,8 @@ public class loginServlet extends HttpServlet {
         request.getSession().setAttribute("user", userEnt.getNombre());
         db.closeConection();
 
-        
         request.getRequestDispatcher("comprarOVender.jsp").forward(request, response);
-      //  response.sendRedirect("comprarOVender.jsp");
+        //  response.sendRedirect("comprarOVender.jsp");
 //        try (PrintWriter out = response.getWriter()) {
 //            /* TODO output your page here. You may use following sample code. */
 //            out.println("<!DOCTYPE html>");

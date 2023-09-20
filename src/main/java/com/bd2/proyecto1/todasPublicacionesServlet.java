@@ -44,6 +44,7 @@ public class todasPublicacionesServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+            out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"styles/tablasStyle.css\">");
             out.print("<meta charset=\"UTF-8\">");
             out.println("<title>Servlet categoryPubServlet</title>");
             out.println("</head>");

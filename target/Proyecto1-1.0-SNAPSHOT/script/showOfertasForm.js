@@ -1,4 +1,4 @@
-function showOfertaEditForm() {
+function showOfertasEditForm() {
 
 
     document.getElementById('oferta-borrar-form').style.display = "none";
@@ -8,7 +8,7 @@ function showOfertaEditForm() {
 
 }
 
-function showOfertaDeleteForm() {
+function showOfertasDeleteForm() {
 
     document.getElementById('oferta-edit-form').style.display = "none";
     document.getElementById('oferta-create-form').style.display = "none";
@@ -16,7 +16,7 @@ function showOfertaDeleteForm() {
 
 
 }
-function showOfertaCreateForm() {
+function showOfertasCreateForm() {
 
     document.getElementById('oferta-edit-form').style.display = "none";
     document.getElementById('oferta-borrar-form').style.display = "none";

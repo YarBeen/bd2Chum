@@ -8,23 +8,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 */
 
 
-/* Hide all forms initially */
+
 .form {
     display: none;
 }
 
-/* Style the buttons */
+
 .botones input {
     margin: 10px;
 }
 
-/* Center the forms */
 .form-container {
     text-align: center;
     margin-top: 20px;
 }
 
-/* Style the forms */
+
 .publicacion-form, .producto-form {
     padding: 20px;
     border: 1px solid #ccc;
@@ -33,7 +32,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     text-align: right;
 }
 
-/* Style the form input fields */
+
 .publicacion-form input[type="number"],
 .producto-form input[type="number"],
 .publicacion-form input[type="text"],
@@ -46,7 +45,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     text-align: right;
 }
 
-/* Style the submit buttons */
 .publicacion-form input[type="submit"],
 .producto-form input[type="submit"] {
     width: 100%;
@@ -63,7 +61,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     background-color: #0056b3;
 }
 
-/* Center the forms within the form container */
+
 .form-container .publicacion-form,
 .form-container .producto-form {
     display: none;
@@ -71,7 +69,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     max-width: 400px;
 }
 
-/* Show the active form */
+
 .active-form {
     display: block;
 }
@@ -83,5 +81,3 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 .ceb-producto {
     display: none;
 }
-
-

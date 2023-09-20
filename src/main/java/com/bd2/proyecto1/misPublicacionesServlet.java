@@ -38,7 +38,7 @@ public class misPublicacionesServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-         OracleDBConnection db = dbSingleton.getDBConnection();
+        OracleDBConnection db = dbSingleton.getDBConnection();
         publicacionRepository pubDB = db.getPubRep();
 
         List<publicacionEntity> publicaciones = pubDB.readMisPublicaciones(db.getUserLogged().getId());
@@ -48,18 +48,16 @@ public class misPublicacionesServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+            out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"styles/tablasStyle.css\">");
             out.print("<meta charset=\"UTF-8\">");
             out.println("<title>Servlet categoryPubServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            
-             out.println("<form action=\"goMain\" method=\"post\">");
-              out.println("<input type=\"submit\" value=\"Volver\"  />");
-              out.println("</form> ");
-             
-            
-            
-            
+
+            out.println("<form action=\"goMain\" method=\"post\">");
+            out.println("<input type=\"submit\" value=\"Volver\"  />");
+            out.println("</form> ");
+
             out.println("<table border=1>");
             out.println("<tr>");
             out.println("    <th>ID</th>\n"
@@ -69,17 +67,16 @@ public class misPublicacionesServlet extends HttpServlet {
                     + "<th>Precio </th>\n"
                     + "        </tr>");
 
-            
-                for (publicacionEntity publicacion : publicaciones) {
-                    out.println("<tr>");
-                    out.print("<td> " + publicacion.getId() + "</td>");
-                    out.print("<td> " + publicacion.getIdProducto() + "</td>");
-                    out.print("<td> " + publicacion.getTitulo() + "</td>");
-                    out.print("<td> " + publicacion.getEstado()+ "</td>");
-                    out.print("<td> " + publicacion.getPrecio() + "</td>");
-                    out.println("</tr>");
-                }
-            
+            for (publicacionEntity publicacion : publicaciones) {
+                out.println("<tr>");
+                out.print("<td> " + publicacion.getId() + "</td>");
+                out.print("<td> " + publicacion.getIdProducto() + "</td>");
+                out.print("<td> " + publicacion.getTitulo() + "</td>");
+                out.print("<td> " + publicacion.getEstado() + "</td>");
+                out.print("<td> " + publicacion.getPrecio() + "</td>");
+                out.println("</tr>");
+            }
+
             out.println("</table>");
             out.println("</body>");
             out.println("</html>");

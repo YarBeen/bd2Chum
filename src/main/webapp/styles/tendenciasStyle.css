@@ -2,7 +2,7 @@
     Created on : Sep 16, 2023, 11:59:44 PM
     Author     : Yarman
 */
-/* Style for user name */
+
 
 
 body {
@@ -10,35 +10,51 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    margin: 10px;
+    background-color: #f0f0f0; 
+    font-family: Arial, sans-serif; 
 }
+
 
 .button-container {
-    text-align: center;
-}
-.user-container {
     text-align: left;
-    padding: 10px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #007bff;
+    color: blue;
 }
 
+
+.user-container {
+    text-align: left;
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    background-color: #fff; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+
 .user-name {
-    font-size: 24px;
+    font-size: 18px; 
     margin: 0;
     padding: 0;
-    color: #007bff; /* You can adjust the color as needed */
+    color: #333; 
 }
+
 .submit {
     display: inline-block;
+    size: 60px 80px;
     padding: 20px 40px;
     font-size: 24px;
     background-color: #007bff;
-    color: #fff;
+    color: blue;
     text-decoration: none;
     margin: 10px;
     border-radius: 8px;
     cursor: pointer;
 }
 
-.button:hover {
+.submit:hover {
     background-color: #0056b3;
 }

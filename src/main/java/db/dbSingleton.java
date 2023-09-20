@@ -11,19 +11,18 @@ import entity.userEntity;
  * @author Yarman
  */
 public class dbSingleton {
+
     private static OracleDBConnection dbConnection;
-    
-    
-    private dbSingleton(){
-        
+
+    private dbSingleton() {
+
     }
-    public static OracleDBConnection getDBConnection(){
-        if (dbConnection== null){
+
+    public static OracleDBConnection getDBConnection() {
+        if (dbConnection == null) {
             dbConnection = new OracleDBConnection();
         }
         return dbConnection;
     }
-    
-   
-    
+
 }

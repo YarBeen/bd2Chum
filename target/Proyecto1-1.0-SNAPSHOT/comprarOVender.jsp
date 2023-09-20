@@ -17,7 +17,7 @@
         var userFromSession = '<%= session.getAttribute("user") %>';
         console.log(typeof userFromSession);
         if (userFromSession === "null" || userFromSession === "") {
-            // User is not logged in, redirect to indexFail.jsp
+   
             window.location.href = "indexNotLogged.jsp";
         }
     </script>

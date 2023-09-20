@@ -39,15 +39,18 @@ public class createPublicacionServlet extends HttpServlet {
         pub = new publicacionEntity(Integer.parseInt(request.getParameter("publication-create-form-id-producto")),
                 request.getParameter("publication-create-form-titulo"),
                 request.getParameter("publication-create-form-estado"),
-               Integer.parseInt( request.getParameter("publication-create-form-precio"))
+                Integer.parseInt(request.getParameter("publication-create-form-precio"))
         );
-        pubDB.save(pub);
+        int done = pubDB.save(pub);
         db.closeConection();
-        
-        
-         request.getRequestDispatcher("comprarOVender.jsp").forward(request, response);
-        
-        
+
+        if (done == -1) {
+            request.getRequestDispatcher("falloPagina.jsp").forward(request, response);
+            return;
+        }
+
+        request.getRequestDispatcher("exitoPagina.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

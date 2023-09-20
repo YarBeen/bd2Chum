@@ -35,11 +35,24 @@ public class deletePublicacionServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         OracleDBConnection db = dbSingleton.getDBConnection();
         publicacionRepository pubDB = db.getPubRep();
+        int isPossible = pubDB.isMine(db.getUserLogged().getId(), Integer.parseInt(request.getParameter("publication-borrar-form-id")));
+        if (isPossible == -1) {
+            request.getRequestDispatcher("noEsTuyo.jsp").forward(request, response);
 
-        pubDB.delete(Integer.parseInt(request.getParameter("publication-borrar-form-id")));
+            return;
+        }
+        db = dbSingleton.getDBConnection();
+        pubDB = db.getPubRep();
+
+        int done = pubDB.delete(Integer.parseInt(request.getParameter("publication-borrar-form-id")));
         db.closeConection();
 
-        request.getRequestDispatcher("comprarOVender.jsp").forward(request, response);
+        if (done == -1) {
+            request.getRequestDispatcher("falloPagina.jsp").forward(request, response);
+            return;
+        }
+
+        request.getRequestDispatcher("exitoPagina.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

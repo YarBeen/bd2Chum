@@ -20,7 +20,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  *
  * @author Yarman
@@ -49,14 +48,15 @@ public class misProductosServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+            out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"styles/tablasStyle.css\">");
             out.print("<meta charset=\"UTF-8\">");
             out.println("<title>Servlet categoryPubServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<form action=\"goMain\" method=\"post\">");
-              out.println("<input type=\"submit\" value=\"Volver\"  />");
-              out.println("</form> ");
-            
+            out.println("<input type=\"submit\" value=\"Volver\"  />");
+            out.println("</form> ");
+
             out.println("<table border=1>");
             out.println("<tr>");
             out.println("    <th>ID</th>\n"
@@ -66,17 +66,16 @@ public class misProductosServlet extends HttpServlet {
                     + "<th>Descripcion </th>\n"
                     + "        </tr>");
 
-            
-                for (productoEntity producto : productos) {
-                    out.println("<tr>");
-                    out.print("<td> " + producto.getId() + "</td>");
-                    out.print("<td> " + producto.getIdVendedor() + "</td>");
-                    out.print("<td> " + producto.getIdCategoria() + "</td>");
-                    out.print("<td> " + producto.getNombre()+ "</td>");
-                    out.print("<td> " + producto.getDescripcion() + "</td>");
-                    out.println("</tr>");
-                }
-            
+            for (productoEntity producto : productos) {
+                out.println("<tr>");
+                out.print("<td> " + producto.getId() + "</td>");
+                out.print("<td> " + producto.getIdVendedor() + "</td>");
+                out.print("<td> " + producto.getIdCategoria() + "</td>");
+                out.print("<td> " + producto.getNombre() + "</td>");
+                out.print("<td> " + producto.getDescripcion() + "</td>");
+                out.println("</tr>");
+            }
+
             out.println("</table>");
             out.println("</body>");
             out.println("</html>");

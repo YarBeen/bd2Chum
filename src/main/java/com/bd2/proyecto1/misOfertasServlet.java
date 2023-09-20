@@ -21,6 +21,7 @@ import oracle.jdbc.OracleTypes;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  *
  * @author Yarman
@@ -39,7 +40,7 @@ public class misOfertasServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-      OracleDBConnection db = dbSingleton.getDBConnection();
+        OracleDBConnection db = dbSingleton.getDBConnection();
         ofertaRepository offeDB = db.getOfeRep();
 
         List<ofertaEntity> ofertas = offeDB.readOfertasHechas(db.getUserLogged().getId());
@@ -49,14 +50,15 @@ public class misOfertasServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+            out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"styles/tablasStyle.css\">");
             out.print("<meta charset=\"UTF-8\">");
             out.println("<title>Servlet categoryPubServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<form action=\"goMain\" method=\"post\">");
-              out.println("<input type=\"submit\" value=\"Volver\"  />");
-              out.println("</form> ");
-           
+            out.println("<input type=\"submit\" value=\"Volver\"  />");
+            out.println("</form> ");
+
             out.println("<table border=1>");
             out.println("<tr>");
             out.println("    <th>ID</th>\n"
@@ -64,21 +66,20 @@ public class misOfertasServlet extends HttpServlet {
                     + "            <th>Regateo</th>\n"
                     + "<th>Mensaje</th>\n"
                     + "<th>Aceptacion </th>\n"
-                     + "<th>ID Publicacion </th>\n"
+                    + "<th>ID Publicacion </th>\n"
                     + "        </tr>");
 
-            
-                for (ofertaEntity oferta : ofertas) {
-                    out.println("<tr>");
-                    out.print("<td> " + oferta.getId() + "</td>");
-                    out.print("<td> " + oferta.getTituloPublicacionOriginal() + "</td>");
-                    out.print("<td> " + oferta.getRegateo() + "</td>");
-                    out.print("<td> " + oferta.getMensaje()+ "</td>");
-                    out.print("<td> " + oferta.getAceptacion() + "</td>");
-                    out.print("<td> " + oferta.getIdPublicacion() + "</td>");
-                    out.println("</tr>");
-                }
-            
+            for (ofertaEntity oferta : ofertas) {
+                out.println("<tr>");
+                out.print("<td> " + oferta.getId() + "</td>");
+                out.print("<td> " + oferta.getTituloPublicacionOriginal() + "</td>");
+                out.print("<td> " + oferta.getRegateo() + "</td>");
+                out.print("<td> " + oferta.getMensaje() + "</td>");
+                out.print("<td> " + oferta.getAceptacion() + "</td>");
+                out.print("<td> " + oferta.getIdPublicacion() + "</td>");
+                out.println("</tr>");
+            }
+
             out.println("</table>");
             out.println("</body>");
             out.println("</html>");

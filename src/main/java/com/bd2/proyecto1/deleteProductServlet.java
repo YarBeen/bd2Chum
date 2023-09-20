@@ -33,14 +33,25 @@ public class deleteProductServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-            OracleDBConnection db = dbSingleton.getDBConnection();
+        OracleDBConnection db = dbSingleton.getDBConnection();
         productoRepository productDB = db.getProdRep();
-       
-        productDB.delete(Integer.parseInt( request.getParameter("productForm-Delete-id")));
+        int isPossible = productDB.isMine(db.getUserLogged().getId(), Integer.parseInt(request.getParameter("productForm-Delete-id")));
+        if (isPossible == -1) {
+            request.getRequestDispatcher("noEsTuyo.jsp").forward(request, response);
+
+            return;
+        }
+        db = dbSingleton.getDBConnection();
+        productDB = db.getProdRep();
+        int done = productDB.delete(Integer.parseInt(request.getParameter("productForm-Delete-id")));
         db.closeConection();
-        
-        
-         request.getRequestDispatcher("comprarOVender.jsp").forward(request, response);
+
+        if (done == -1) {
+            request.getRequestDispatcher("falloPagina.jsp").forward(request, response);
+            return;
+        }
+
+        request.getRequestDispatcher("exitoPagina.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

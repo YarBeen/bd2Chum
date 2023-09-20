@@ -44,18 +44,20 @@ public class categoryOfferServlet extends HttpServlet {
         List<stringAndInt> tendencias = productDB.getMasOfertable();
         db.closeConection();
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-           out.print("<meta charset=\"UTF-8\">");
+            out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"styles/tablasStyle.css\">");
+            out.print("<meta charset=\"UTF-8\">");
             out.println("<title>Servlet categoryPubServlet</title>");
             out.println("</head>");
+            out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"styles/tablasStyle.css\">");
             out.println("<body>");
             out.println("<form action=\"goMain\" method=\"post\">");
-              out.println("<input type=\"submit\" value=\"Volver\"  />");
-              out.println("</form> ");
-           
+            out.println("<input type=\"submit\" value=\"Volver\"  />");
+            out.println("</form> ");
+
             out.println("<table border=1>");
             out.println("<tr>");
             out.println("    <th>ID Categoria</th>\n"
@@ -66,7 +68,7 @@ public class categoryOfferServlet extends HttpServlet {
                 out.println("<tr>");
                 out.print("<td> " + tendencia.getNombre() + "</td>");
                 out.print("<td> " + tendencia.getValor() + "</td>");
-               
+
                 out.println("</tr>");
             }
 

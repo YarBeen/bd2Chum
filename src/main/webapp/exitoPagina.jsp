@@ -9,9 +9,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Exito</title>
     </head>
     <body>
+          <form action="goMain" method="post">"
+            <input type="submit" value="Volver" />
+            </form> 
         <h1>Se realizó la transferencia</h1>
     </body>
 </html>

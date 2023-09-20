@@ -22,7 +22,7 @@ public class OracleDBConnection {
     private ofertaRepository ofeRep;
     private productoRepository prodRep;
     private boolean open;
-    private  userEntity user;
+    private userEntity user;
     private tendenciaRepository tendRep;
 
     public productoRepository getProdRep() {
@@ -59,7 +59,7 @@ public class OracleDBConnection {
         }
     }
 
-    public  userEntity getUserLogged() {
+    public userEntity getUserLogged() {
 
         return user;
     }
@@ -81,7 +81,11 @@ public class OracleDBConnection {
     }
 
     public void closeConection() {
+
         try {
+            if (this.open = false) {
+                return;
+            }
             if (connection != null && !connection.isClosed()) {
                 this.connection.close();
                 this.open = false;
@@ -92,8 +96,7 @@ public class OracleDBConnection {
     }
 
     public void openConnection() {
-        
-        
+
         String url = "jdbc:oracle:thin:@siuadb1_high?TNS_ADMIN=C:/wall";
         String user = "YCHARPENTIER";
         String password = "bdAlajuela2023s2";
@@ -101,9 +104,7 @@ public class OracleDBConnection {
             Properties prop = new Properties();
             prop.setProperty("user", user);
             prop.setProperty("password", password);
-            // Create a connection to the database
 
-            // Register the Oracle JDBC driver
             Class.forName("oracle.jdbc.OracleDriver");
             connection = DriverManager.getConnection(url, prop);
             this.connection = connection;
@@ -126,7 +127,7 @@ public class OracleDBConnection {
     }
 
     public OracleDBConnection() {
-    
+
         String url = "jdbc:oracle:thin:@siuadb1_high?TNS_ADMIN=C:/wall";
         String user = "YCHARPENTIER";
         String password = "bdAlajuela2023s2";
@@ -137,9 +138,7 @@ public class OracleDBConnection {
             Properties prop = new Properties();
             prop.setProperty("user", user);
             prop.setProperty("password", password);
-            // Create a connection to the database
 
-            // Register the Oracle JDBC driver
             Class.forName("oracle.jdbc.OracleDriver");
             connection = DriverManager.getConnection(url, prop);
             this.connection = connection;

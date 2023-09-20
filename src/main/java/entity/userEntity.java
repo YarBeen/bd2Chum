@@ -9,6 +9,7 @@ package entity;
  * @author Yarman
  */
 public class userEntity {
+
     private int id;
     private String nombre;
     private String apellido;
@@ -77,7 +78,5 @@ public class userEntity {
         this.username = username;
         this.contraseña = contraseña;
     }
-    
-    
-    
+
 }

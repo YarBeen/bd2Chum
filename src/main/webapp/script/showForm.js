@@ -1,7 +1,4 @@
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
- */
+
 
 function showButtonsPublicacion() {
     document.getElementById('botones-producto').style.display = "none";
@@ -19,7 +16,7 @@ function showPublicationForm() {
 }
 function hideAll() {
 
-    //Buttons 
+
 //    document.getElementById('botones-publicacion').style.display = "none";
 //    document.getElementById('botones-producto').style.display = "none";
     //Forms

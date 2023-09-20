@@ -37,16 +37,28 @@ public class editProductServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         OracleDBConnection db = dbSingleton.getDBConnection();
         productoRepository prodRep = db.getProdRep();
+        int isPossible = prodRep.isMine(db.getUserLogged().getId(), Integer.parseInt(request.getParameter("productForm-edit-id")));
+        if (isPossible == -1) {
+            request.getRequestDispatcher("noEsTuyo.jsp").forward(request, response);
+
+            return;
+        }
+        db = dbSingleton.getDBConnection();
+        prodRep = db.getProdRep();
         productoEntity prod;
         prod = new productoEntity(Integer.parseInt(request.getParameter("productForm-edit-id")),
                 request.getParameter("productForm-edit-nombre"),
                 request.getParameter("productForm-edit-descripcion")
-            
         );
-        prodRep.update(prod);
+        int done = prodRep.update(prod);
         db.closeConection();
 
-        request.getRequestDispatcher("comprarOVender.jsp").forward(request, response);
+        if (done == -1) {
+            request.getRequestDispatcher("falloPagina.jsp").forward(request, response);
+            return;
+        }
+
+        request.getRequestDispatcher("exitoPagina.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

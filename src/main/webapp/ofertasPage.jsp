@@ -15,12 +15,12 @@
         var userFromSession = '<%= session.getAttribute("user") %>';
         console.log(typeof userFromSession);
         if (userFromSession === "null" || userFromSession === "") {
-            // User is not logged in, redirect to indexFail.jsp
+           
             window.location.href = "indexNotLogged.jsp";
         }
     </script>
 
-    
+
     <script src="script/checkLoggedStatus.js"></script>
     </head>
     <body>
@@ -39,14 +39,16 @@
             <input type="button" value="Editar Oferta" onclick="showOfertasEditForm()"/>
             <input type="button" value="Borrar Oferta" onclick="showOfertasDeleteForm()"/>
          </div>
+         
          <div class="form-container">
+             
             <div id="oferta-edit-form" class="oferta-form">
                 <form action="editOferta" method="post">
                     ID-Oferta<input type="number" name="oferta-edit-form-id-oferta" required/><br>
                     Precio-Regateo<input type="number" name="oferta-edit-form-precio" required/><br>
-                 
+
                     Mensaje<input type="string" name="oferta-edit-form-mensaje" required/><br>
-                   
+
                 <input type="submit" value="Enviar"/>
                 </form></div>
 
