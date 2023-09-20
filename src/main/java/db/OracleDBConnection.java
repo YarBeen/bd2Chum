@@ -93,7 +93,7 @@ public class OracleDBConnection {
 
     public void openConnection() {
         
-
+        
         String url = "jdbc:oracle:thin:@siuadb1_high?TNS_ADMIN=C:/wall";
         String user = "YCHARPENTIER";
         String password = "bdAlajuela2023s2";
