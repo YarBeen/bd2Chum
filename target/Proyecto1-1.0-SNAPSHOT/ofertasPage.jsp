@@ -69,5 +69,6 @@
                 </form>
             </div>
          </div>
+         <script src="script/showOfertasForm.js"></script>
     </body>
 </html>
