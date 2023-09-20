@@ -27,7 +27,7 @@
     <link rel="stylesheet" type="text/css" href="styles/comprarOVenderStyle.css">
 </head>
 <body>
-    <p class="hola-usuario"><strong>Hola:</strong> <%= session.getAttribute("user") %></p><br>
+    <p class="hola-usuario"><strong>Usuario:</strong> <%= session.getAttribute("user") %></p><br>
 
     <div class="button-container">
         <a href="tendencias.jsp" class="button">Tendencias</a>

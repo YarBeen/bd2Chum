@@ -45,6 +45,7 @@ public class loginServlet extends HttpServlet {
             response.sendRedirect("indexFail.jsp");
             return;
         }
+        db.setUser(userEnt);
         request.getSession().setAttribute("userEntity", userEnt);
         request.getSession().setAttribute("user", userEnt.getNombre());
         db.closeConection();

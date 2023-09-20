@@ -4,12 +4,15 @@
  */
 package db;
 
+import entity.userEntity;
+
 /**
  *
  * @author Yarman
  */
 public class dbSingleton {
     private static OracleDBConnection dbConnection;
+    
     
     private dbSingleton(){
         
@@ -20,5 +23,7 @@ public class dbSingleton {
         }
         return dbConnection;
     }
+    
+   
     
 }

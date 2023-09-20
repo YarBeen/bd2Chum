@@ -10,8 +10,13 @@ import java.sql.Connection;
 import java.util.List;
 import java.util.Optional;
 import static db.Queries.*;
+import entity.ofertaEntity;
 import java.sql.CallableStatement;
 import java.sql.SQLException;
+import java.sql.ResultSet;
+import oracle.jdbc.OracleTypes;
+import oracle.jdbc.OracleTypes;
+import java.util.ArrayList;
 
 /**
  *
@@ -23,6 +28,80 @@ public class publicacionRepository {
 
     public publicacionRepository(OracleDBConnection connection) {
         this.connection = connection;
+    }
+
+    public List<publicacionEntity> read(int entityID) {
+
+        try (Connection connect = this.connection.getConnection()) {
+            // Prepare the call to the stored procedure
+
+            CallableStatement callableStatement = connect.prepareCall(READ_PUBLICACION_QUERY);
+
+            callableStatement.setInt(1, entityID);
+            callableStatement.registerOutParameter(2, OracleTypes.CURSOR);
+
+            // Execute the stored procedure
+            callableStatement.executeUpdate();
+
+            ResultSet results = (ResultSet) callableStatement.getObject(2);
+            List<publicacionEntity> listPub = new ArrayList<>();
+
+            while (results.next()) {
+                publicacionEntity actual = new publicacionEntity(results.getInt("ID"),
+                        results.getInt("ID_PRODUCTO"),
+                        results.getString("Titulo"),
+                        results.getString("Estado"),
+                        results.getInt("Precio")
+                );
+                listPub.add(actual);
+            }
+            callableStatement.close();
+            connection.closeConection();
+
+            return listPub;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+    public List<publicacionEntity> readMisPublicaciones(int entityID) {
+
+        try (Connection connect = this.connection.getConnection()) {
+            // Prepare the call to the stored procedure
+
+            CallableStatement callableStatement = connect.prepareCall(READ_MIS_PUBLICACIONES_QUERY);
+
+            callableStatement.setInt(1, entityID);
+            callableStatement.registerOutParameter(2, OracleTypes.CURSOR);
+
+            // Execute the stored procedure
+            callableStatement.executeUpdate();
+
+            ResultSet results = (ResultSet) callableStatement.getObject(2);
+            List<publicacionEntity> listPub = new ArrayList<>();
+
+            while (results.next()) {
+                publicacionEntity actual = new publicacionEntity(results.getInt("ID"),
+                        results.getInt("ID_PRODUCTO"),
+                        results.getString("TITULO"),
+                        results.getString("ESTADO"),
+                        results.getInt("PRECIO")
+                );
+                listPub.add(actual);
+            }
+            callableStatement.close();
+            connection.closeConection();
+
+            return listPub;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            this.connection.closeConection();
+            return null;
+        }
+
     }
 
     public int save(publicacionEntity entity) {
@@ -39,7 +118,7 @@ public class publicacionRepository {
 
             // Execute the stored procedure
             callableStatement.executeUpdate();
-            connect.commit();
+
             connection.closeConection();
 
             System.out.println("Publicacion inserted successfully.");
@@ -65,6 +144,8 @@ public class publicacionRepository {
             // Execute the stored procedure
             callableStatement.executeUpdate();
 
+            connection.closeConection();
+
             System.out.println("Publicacion deleted successfully.");
             return 0;
         } catch (SQLException e) {
@@ -88,6 +169,8 @@ public class publicacionRepository {
 
             // Execute the stored procedure
             callableStatement.executeUpdate();
+
+            connection.closeConection();
 
             System.out.println("Publicacion updated successfully.");
             return 0;

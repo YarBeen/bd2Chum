@@ -12,10 +12,28 @@ public class ofertaEntity {
     private int id;
     private int idComprador;
     private int idPublicacion;
+    private String tituloPublicacionOriginal;
     private int Regateo;
     private String Mensaje;
     private String Aceptacion;
 
+    public String getTituloPublicacionOriginal() {
+        return tituloPublicacionOriginal;
+    }
+
+    public void setTituloPublicacionOriginal(String tituloPublicacionOriginal) {
+        this.tituloPublicacionOriginal = tituloPublicacionOriginal;
+    }
+
+         public ofertaEntity(int id, int idComprador, int idPublicacion, int Regateo, String Mensaje, String Aceptacion, String titulo) {
+        this.id = id;
+        this.idComprador = idComprador;
+        this.idPublicacion = idPublicacion;
+        this.Regateo = Regateo;
+        this.Mensaje = Mensaje;
+        this.Aceptacion = Aceptacion;
+        this.tituloPublicacionOriginal=titulo;
+    }
     public ofertaEntity(int id, int idComprador, int idPublicacion, int Regateo, String Mensaje, String Aceptacion) {
         this.id = id;
         this.idComprador = idComprador;
@@ -23,6 +41,30 @@ public class ofertaEntity {
         this.Regateo = Regateo;
         this.Mensaje = Mensaje;
         this.Aceptacion = Aceptacion;
+    }
+  
+       public ofertaEntity(int id, int idComprador, int idPublicacion, int Regateo, String Mensaje) {
+        this.id = id;
+        this.idComprador = idComprador;
+        this.idPublicacion = idPublicacion;
+        this.Regateo = Regateo;
+        this.Mensaje = Mensaje;
+     
+    }
+        public ofertaEntity(int id ,int Regateo, String Mensaje) {
+        this.id = id;
+      
+        this.Regateo = Regateo;
+        this.Mensaje = Mensaje;
+     
+    }
+          public ofertaEntity(int idComprador ,int Regateo, String Mensaje,int idPublicacion) {
+        this.idComprador = idComprador;
+      
+        this.Regateo = Regateo;
+        this.Mensaje = Mensaje;
+        this.idPublicacion=idPublicacion;
+     
     }
     
 
@@ -32,6 +74,13 @@ public class ofertaEntity {
         this.Regateo = Regateo;
         this.Mensaje = Mensaje;
         this.Aceptacion = Aceptacion;
+    }
+      public ofertaEntity(int idComprador, int idPublicacion, int Regateo, String Mensaje) {
+        this.idComprador = idComprador;
+        this.idPublicacion = idPublicacion;
+        this.Regateo = Regateo;
+        this.Mensaje = Mensaje;
+     
     }
 
 

@@ -43,6 +43,8 @@ public class createPublicacionServlet extends HttpServlet {
         );
         pubDB.save(pub);
         db.closeConection();
+        
+        
          request.getRequestDispatcher("comprarOVender.jsp").forward(request, response);
         
         
