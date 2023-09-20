@@ -1,0 +1,83 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Sep 17, 2023, 12:32:03 AM
+    Author     : Yarman
+*/
+
+
+
+.form {
+    display: none;
+}
+
+
+.botones input {
+    margin: 10px;
+}
+
+.form-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.publicacion-form, .producto-form {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #888888;
+    text-align: right;
+}
+
+
+.publicacion-form input[type="number"],
+.producto-form input[type="number"],
+.publicacion-form input[type="text"],
+.producto-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-align: right;
+}
+
+.publicacion-form input[type="submit"],
+.producto-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.publicacion-form input[type="submit"]:hover,
+.producto-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+.form-container .publicacion-form,
+.form-container .producto-form {
+    display: none;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+
+.active-form {
+    display: block;
+}
+.ceb-publicacion
+{
+    display: none;
+}
+
+.ceb-producto {
+    display: none;
+}

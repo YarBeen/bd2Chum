@@ -1,0 +1,59 @@
+13-Sep-2023 21:14:35.909 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.13
+13-Sep-2023 21:14:35.912 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 23 2023 21:34:59 UTC
+13-Sep-2023 21:14:35.913 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.13.0
+13-Sep-2023 21:14:35.913 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+13-Sep-2023 21:14:35.913 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+13-Sep-2023 21:14:35.913 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+13-Sep-2023 21:14:35.913 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-18.0.1.1
+13-Sep-2023 21:14:35.914 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           18.0.1.1+2-6
+13-Sep-2023 21:14:35.914 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+13-Sep-2023 21:14:35.914 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\User\Toms\apache-tomcat-10.1.13
+13-Sep-2023 21:14:35.914 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\User\Toms\apache-tomcat-10.1.13
+13-Sep-2023 21:14:35.921 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\User\Toms\apache-tomcat-10.1.13\conf\logging.properties
+13-Sep-2023 21:14:35.921 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+13-Sep-2023 21:14:35.921 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dhttp.nonProxyHosts=localhost|127.0.0.1|DESKTOP-C130ESJ
+13-Sep-2023 21:14:35.921 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+13-Sep-2023 21:14:35.921 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+13-Sep-2023 21:14:35.921 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+13-Sep-2023 21:14:35.921 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+13-Sep-2023 21:14:35.921 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+13-Sep-2023 21:14:35.921 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+13-Sep-2023 21:14:35.922 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+13-Sep-2023 21:14:35.922 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\User\Toms\apache-tomcat-10.1.13
+13-Sep-2023 21:14:35.922 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\User\Toms\apache-tomcat-10.1.13
+13-Sep-2023 21:14:35.922 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\User\Toms\apache-tomcat-10.1.13\temp
+13-Sep-2023 21:14:35.924 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.5] using APR version [1.7.4].
+13-Sep-2023 21:14:35.929 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.10 1 Aug 2023]
+13-Sep-2023 21:14:36.115 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+13-Sep-2023 21:14:36.134 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [361] milliseconds
+13-Sep-2023 21:14:36.174 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+13-Sep-2023 21:14:36.175 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.13]
+13-Sep-2023 21:14:36.184 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\User\Toms\apache-tomcat-10.1.13\webapps\docs]
+13-Sep-2023 21:14:36.445 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\User\Toms\apache-tomcat-10.1.13\webapps\docs] has finished in [260] ms
+13-Sep-2023 21:14:36.445 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\User\Toms\apache-tomcat-10.1.13\webapps\examples]
+13-Sep-2023 21:14:36.808 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\User\Toms\apache-tomcat-10.1.13\webapps\examples] has finished in [363] ms
+13-Sep-2023 21:14:36.808 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\User\Toms\apache-tomcat-10.1.13\webapps\host-manager]
+13-Sep-2023 21:14:36.841 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\User\Toms\apache-tomcat-10.1.13\webapps\host-manager] has finished in [33] ms
+13-Sep-2023 21:14:36.841 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\User\Toms\apache-tomcat-10.1.13\webapps\manager]
+13-Sep-2023 21:14:36.875 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\User\Toms\apache-tomcat-10.1.13\webapps\manager] has finished in [34] ms
+13-Sep-2023 21:14:36.875 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\User\Toms\apache-tomcat-10.1.13\webapps\ROOT]
+13-Sep-2023 21:14:36.897 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\User\Toms\apache-tomcat-10.1.13\webapps\ROOT] has finished in [22] ms
+13-Sep-2023 21:14:36.900 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+13-Sep-2023 21:14:36.941 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [805] milliseconds
+13-Sep-2023 22:10:04.079 INFO [http-nio-8080-exec-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\User\Toms\apache-tomcat-10.1.13\conf\Catalina\localhost\BD2ProyectoS2.xml]
+13-Sep-2023 22:10:04.082 WARNING [http-nio-8080-exec-2] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/BD2ProyectoS2] in deployment descriptor [C:\Users\User\Toms\apache-tomcat-10.1.13\conf\Catalina\localhost\BD2ProyectoS2.xml] has been ignored
+13-Sep-2023 22:10:04.123 INFO [http-nio-8080-exec-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\User\Toms\apache-tomcat-10.1.13\conf\Catalina\localhost\BD2ProyectoS2.xml] has finished in [44] ms
+13-Sep-2023 22:10:04.125 INFO [http-nio-8080-exec-6] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/BD2ProyectoS2]] after start() had already been called. The second call will be ignored.
+13-Sep-2023 22:10:31.686 INFO [http-nio-8080-exec-6] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/BD2ProyectoS2]
+13-Sep-2023 22:10:31.696 INFO [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\User\Toms\apache-tomcat-10.1.13\conf\Catalina\localhost\BD2ProyectoS2.xml]
+13-Sep-2023 22:10:31.697 WARNING [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/BD2ProyectoS2] in deployment descriptor [C:\Users\User\Toms\apache-tomcat-10.1.13\conf\Catalina\localhost\BD2ProyectoS2.xml] has been ignored
+13-Sep-2023 22:10:31.727 INFO [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\User\Toms\apache-tomcat-10.1.13\conf\Catalina\localhost\BD2ProyectoS2.xml] has finished in [31] ms
+13-Sep-2023 22:10:32.996 INFO [http-nio-8080-exec-11] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/BD2ProyectoS2]
+13-Sep-2023 22:10:33.008 INFO [http-nio-8080-exec-10] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\User\Toms\apache-tomcat-10.1.13\conf\Catalina\localhost\BD2ProyectoS2.xml]
+13-Sep-2023 22:10:33.009 WARNING [http-nio-8080-exec-10] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/BD2ProyectoS2] in deployment descriptor [C:\Users\User\Toms\apache-tomcat-10.1.13\conf\Catalina\localhost\BD2ProyectoS2.xml] has been ignored
+13-Sep-2023 22:10:33.036 INFO [http-nio-8080-exec-10] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\User\Toms\apache-tomcat-10.1.13\conf\Catalina\localhost\BD2ProyectoS2.xml] has finished in [28] ms
+13-Sep-2023 22:10:33.038 INFO [http-nio-8080-exec-9] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/BD2ProyectoS2]] after start() had already been called. The second call will be ignored.
+13-Sep-2023 22:10:58.565 INFO [http-nio-8080-exec-3] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/BD2ProyectoS2]
+13-Sep-2023 22:10:58.572 INFO [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\User\Toms\apache-tomcat-10.1.13\conf\Catalina\localhost\BD2ProyectoS2.xml]
+13-Sep-2023 22:10:58.572 WARNING [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/BD2ProyectoS2] in deployment descriptor [C:\Users\User\Toms\apache-tomcat-10.1.13\conf\Catalina\localhost\BD2ProyectoS2.xml] has been ignored
+13-Sep-2023 22:10:58.600 INFO [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\User\Toms\apache-tomcat-10.1.13\conf\Catalina\localhost\BD2ProyectoS2.xml] has finished in [29] ms

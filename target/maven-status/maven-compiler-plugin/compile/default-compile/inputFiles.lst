@@ -1,5 +1,6 @@
 C:\Users\User\Documents\NetBeansProjects\Proyecto1\src\main\java\com\bd2\proyecto1\todasPublicacionesServlet.java
 C:\Users\User\Documents\NetBeansProjects\Proyecto1\src\main\java\db\OracleDBConnection.java
+C:\Users\User\Documents\NetBeansProjects\Proyecto1\src\main\java\com\bd2\proyecto1\acceptOfertServlet.java
 C:\Users\User\Documents\NetBeansProjects\Proyecto1\src\main\java\com\bd2\proyecto1\categoryOfferServlet.java
 C:\Users\User\Documents\NetBeansProjects\Proyecto1\src\main\java\com\bd2\proyecto1\misOfertasRecibidasServlet.java
 C:\Users\User\Documents\NetBeansProjects\Proyecto1\src\main\java\db\publicacionRepository.java
@@ -27,6 +28,7 @@ C:\Users\User\Documents\NetBeansProjects\Proyecto1\src\main\java\entity\producto
 C:\Users\User\Documents\NetBeansProjects\Proyecto1\src\main\java\com\bd2\proyecto1\editProductServlet.java
 C:\Users\User\Documents\NetBeansProjects\Proyecto1\src\main\java\com\bd2\proyecto1\editPublicacionServlet.java
 C:\Users\User\Documents\NetBeansProjects\Proyecto1\src\main\java\com\bd2\proyecto1\createOfertaServlet.java
+C:\Users\User\Documents\NetBeansProjects\Proyecto1\src\main\java\com\bd2\proyecto1\rejectOfertaServlet.java
 C:\Users\User\Documents\NetBeansProjects\Proyecto1\src\main\java\db\userRepository.java
 C:\Users\User\Documents\NetBeansProjects\Proyecto1\src\main\java\entity\publicacionEntity.java
 C:\Users\User\Documents\NetBeansProjects\Proyecto1\src\main\java\com\bd2\proyecto1\deleteProductServlet.java
