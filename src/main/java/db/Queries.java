@@ -12,7 +12,7 @@ public class Queries {
 
     public static final String PUBLICACION_IS_MINE_QUERY = "{ ? = call consultas.VerificarRelacionVendedorPublicacion(?, ?) }";
     public static final String LOGIN_CLIENT_QUERY = "select * from Usuario where Username = ? and Contrasenna = ?";
-    public static final String READ_PUBLICACION_QUERY = "{call consultas.MostrarPublicacionID(?, ?)}";
+    public static final String READ_PUBLICACION_QUERY = "{call consultas.MostrarPublicacion( ?)}";
     public static final String READ_MIS_PUBLICACIONES_QUERY = "{call consultas.ObtenerPublicacionesDeVendedor(?, ?)}";
     public static final String INSERT_PUBLICACION_QUERY = "{call modificaciones.InsertarPublicacion(?, ?, ? , ?)}";
     public static final String DELETE_PUBLICACION_QUERY = "{call  modificaciones.EliminarPublicacionPorID(?)}";

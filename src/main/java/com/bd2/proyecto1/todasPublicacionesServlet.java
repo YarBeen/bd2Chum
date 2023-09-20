@@ -37,7 +37,7 @@ public class todasPublicacionesServlet extends HttpServlet {
         OracleDBConnection db = dbSingleton.getDBConnection();
         publicacionRepository pubDB = db.getPubRep();
 
-        List<publicacionEntity> publicaciones = pubDB.read(db.getUserLogged().getId());
+        List<publicacionEntity> publicaciones = pubDB.read();
         db.closeConection();
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */

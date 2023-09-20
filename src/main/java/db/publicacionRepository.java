@@ -31,18 +31,18 @@ public class publicacionRepository {
         this.connection = connection;
     }
 
-    public List<publicacionEntity> read(int entityID) {
+    public List<publicacionEntity> read() {
 
         try (Connection connect = this.connection.getConnection()) {
 
             CallableStatement callableStatement = connect.prepareCall(READ_PUBLICACION_QUERY);
 
-            callableStatement.setInt(1, entityID);
-            callableStatement.registerOutParameter(2, OracleTypes.CURSOR);
+           
+            callableStatement.registerOutParameter(1, OracleTypes.CURSOR);
 
             callableStatement.executeUpdate();
 
-            ResultSet results = (ResultSet) callableStatement.getObject(2);
+            ResultSet results = (ResultSet) callableStatement.getObject(1);
             List<publicacionEntity> listPub = new ArrayList<>();
 
             while (results.next()) {
