@@ -6,4 +6,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Created on : Sep 17, 2023, 1:17:25 AM
     Author     : Yarman
 */
-
+.form-container{
+    display: none;
+}

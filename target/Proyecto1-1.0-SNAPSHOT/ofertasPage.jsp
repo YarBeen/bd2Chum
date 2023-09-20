@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Ofertas</title>
+         <link rel="stylesheet" type="text/css" href="styles/ofertasStyle.css">
          <script>
         var userFromSession = '<%= session.getAttribute("user") %>';
         console.log(typeof userFromSession);
