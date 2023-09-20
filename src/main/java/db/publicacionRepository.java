@@ -109,7 +109,7 @@ public class publicacionRepository {
 
             CallableStatement callableStatement = connect.prepareCall(INSERT_PUBLICACION_QUERY);
 
-            callableStatement.setInt(1, entity.getIdProducto());
+            callableStatement.setInt(1, entity.getId());
             callableStatement.setString(2, entity.getTitulo());
             callableStatement.setString(3, entity.getEstado());
             callableStatement.setInt(4, entity.getPrecio());

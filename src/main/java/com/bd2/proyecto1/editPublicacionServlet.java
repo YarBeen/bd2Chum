@@ -45,7 +45,7 @@ public class editPublicacionServlet extends HttpServlet {
         pubDB = db.getPubRep();
         publicacionEntity pub;
         pub = new publicacionEntity(Integer.parseInt(request.getParameter("publication-edit-form-id")),
-                Integer.parseInt(request.getParameter("publication-edit-form-id-producto")),
+                0,
                 request.getParameter("publication-edit-form-titulo"),
                 request.getParameter("publication-edit-form-estado"),
                 Integer.parseInt(request.getParameter("publication-edit-form-precio"))
