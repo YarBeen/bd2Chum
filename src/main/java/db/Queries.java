@@ -25,8 +25,11 @@ public class Queries {
     public static final String DELETE_PRODUCTO_QUERY = "{call modificaciones.EliminarProductoPorID(?)}";
     public static final String UPDATE_PRODUCTO_QUERY = "{call  modificaciones.ActualizarProductoPorID(?,?,?)}";
 
+    public static final String OFERTA_IS_MADE_TO_ME_QUERY = "{ ? = call consultas.VerificarRelacionVendedorOferta(?, ?) }";
     public static final String OFERTA_IS_MINE_QUERY = "{ ? = call consultas.VerificarRelacionCompradorOferta(?, ?) }";
     public static final String READ_OFERTA_QUERY = "{call consultas.MostrarOfertaID(?, ?)}";
+     public static final String ACCEPT_OFERTA_QUERY = "{call modificaciones.AceptarOferta(?, ?)}";
+      public static final String REJECT_OFERTA_QUERY = "{call modificaciones.RechazarOferta(?, ?)}";
     public static final String READ_OFERTAS_HECHAS_QUERY = "{call consultas.ObtenerOfertasDeComprador(?, ?)}";
     public static final String READ_OFERTAS_RECIBIDAS_QUERY = "{call consultas.ObtenerOfertasDeVendedor(?, ?)}";
     public static final String INSERT_OFERTA_QUERY = "{call  modificaciones.InsertarOferta(?, ? , ? , ?, ? )}";

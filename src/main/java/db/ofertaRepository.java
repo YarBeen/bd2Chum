@@ -195,6 +195,28 @@ public class ofertaRepository {
             return -1;
         }
     }
+     public int isMadeToMe(int userID, int ofertaID) {
+        try (Connection connect = this.connection.getConnection()) {
+
+            CallableStatement callableStatement = connect.prepareCall(OFERTA_IS_MADE_TO_ME_QUERY);
+
+            callableStatement.registerOutParameter(1, Types.INTEGER);
+
+            callableStatement.setInt(2, userID);
+            callableStatement.setInt(3, ofertaID);
+
+            callableStatement.executeUpdate();
+            int result = callableStatement.getInt(1);
+
+            connection.closeConection();
+
+            return result;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            connection.closeConection();
+            return -1;
+        }
+    }
 
     public int delete(int entityID) {
 
@@ -208,6 +230,48 @@ public class ofertaRepository {
 
             connection.closeConection();
             System.out.println("Oferta deleted successfully.");
+            return 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            connection.closeConection();
+            return -1;
+        }
+
+    }
+     public int accept(int userID,int offerID) {
+
+        try (Connection connect = this.connection.getConnection()) {
+
+            CallableStatement callableStatement = connect.prepareCall(ACCEPT_OFERTA_QUERY);
+
+            callableStatement.setInt(1, userID);
+            callableStatement.setInt(2, offerID);
+
+            callableStatement.executeUpdate();
+
+            connection.closeConection();
+            System.out.println("Oferta rejected successfully.");
+            return 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            connection.closeConection();
+            return -1;
+        }
+
+    }
+          public int reject(int userID,int offerID) {
+
+        try (Connection connect = this.connection.getConnection()) {
+
+            CallableStatement callableStatement = connect.prepareCall(REJECT_OFERTA_QUERY);
+
+            callableStatement.setInt(1, userID);
+            callableStatement.setInt(2, offerID);
+
+            callableStatement.executeUpdate();
+
+            connection.closeConection();
+            System.out.println("Oferta rejected successfully.");
             return 0;
         } catch (SQLException e) {
             e.printStackTrace();

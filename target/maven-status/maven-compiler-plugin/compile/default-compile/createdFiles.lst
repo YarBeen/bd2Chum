@@ -4,11 +4,13 @@ db\dbSingleton.class
 com\bd2\proyecto1\editProductServlet.class
 com\bd2\proyecto1\misOfertasRecibidasServlet.class
 entity\publicacionEntity.class
+com\bd2\proyecto1\acceptOfertServlet.class
 db\Queries.class
 com\bd2\proyecto1\editPublicacionServlet.class
 com\bd2\proyecto1\createPublicacionServlet.class
 db\publicacionRepository.class
 com\bd2\proyecto1\deleteOfertaServlet.class
+com\bd2\proyecto1\rejectOfertaServlet.class
 entity\userEntity.class
 com\bd2\proyecto1\deletePublicacionServlet.class
 db\ofertaRepository.class

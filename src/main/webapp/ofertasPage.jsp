@@ -38,6 +38,8 @@
             <input type="button" value="Crear Oferta" onclick="showOfertasCreateForm()"/>
             <input type="button" value="Editar Oferta" onclick="showOfertasEditForm()"/>
             <input type="button" value="Borrar Oferta" onclick="showOfertasDeleteForm()"/>
+            <input type="button" value="Rechazar Oferta" onclick="showOfertasRejectForm()"/>
+            <input type="button" value="Aceptar Oferta" onclick="showOfertasAcceptForm()"/>
          </div>
          
          <div class="form-container">
@@ -69,6 +71,23 @@
                     Mensaje<input type="string" name="oferta-create-form-mensaje" required/><br>
                 <input type="submit" value="Enviar"/>
                 </form>
+            </div>
+             <div id="oferta-rechazar-form"  class="oferta-form">
+                <form action="rejectOferta" method="post">
+
+                      Id Oferta a Rechazar<input type="number" name="oferta-reject-id" required/><br>
+                    
+                <input type="submit" value="Enviar"/>
+                </form>
+             </div >
+             <div id="oferta-accept-form"  class="oferta-form">
+                                 <form action="acceptOfert" method="post">
+
+                      ID Oferta a Aceptar<input type="number" name="oferta-accept-id" required/><br>
+                    
+                <input type="submit" value="Enviar"/>
+                </form>
+             </div>
             </div>
          </div>
          <script src="script/showOfertasForm.js"></script>
