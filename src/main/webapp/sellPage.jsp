@@ -52,7 +52,7 @@
             <div id="publication-edit-form" class="publicacion-form">
                 <form action="editPublicacion" method="post">
                     ID<input type="number" name="publication-edit-form-id" required/><br>
-                    ID-Producto<input type="number" name="publication-edit-form-id-producto" required/><br>
+                    
                     Titulo<input type="string" name="publication-edit-form-titulo" required/><br>
                     Estado<input type="string" name="publication-edit-form-estado" required/><br>
                     Precio<input type="number" name="publication-edit-form-precio" required/><br>
